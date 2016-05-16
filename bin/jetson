@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'spitfire'
+require 'jetson'
 
-Spitfire.run ARGV.first
+Jetson::Console.start

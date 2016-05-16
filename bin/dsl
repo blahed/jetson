@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'jetson/dsl'
+
+extend Jetson::DSL
+
+session 'http://localhost:4567' do
+  set :verbose, true
+  set :headers, {foo: 'bar'}
+  set :cookies, {wee: 'hah'}
+  
+  get '/cookies'
+  get! '/'
+  # users = request!(:get, 'https://user:password@httpbin.org/hidden-basic-auth/user/password')
+end

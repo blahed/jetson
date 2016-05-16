@@ -1,0 +1,26 @@
+require 'pp'
+require 'sinatra'
+require 'sinatra/cookies'
+require 'sinatra/json'
+
+get '/' do
+  pp request.env.select {|k, _| k[0] =~ /\A[A-Z]/ }
+  json cookies
+end
+
+post '/api' do
+  pp request.env.select {|k, _| k[0] =~ /\A[A-Z]/ }
+  puts cookies
+  puts request.body.read
+  json headers
+end
+
+get '/cookies' do
+  pp request.env.select {|k, _| k[0] =~ /\A[A-Z]/ }
+  cookies[:foo] = 'bar'
+  json cookies
+end
+
+get '/boo' do
+  asdf
+end

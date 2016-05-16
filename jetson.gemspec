@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'spitfire/version'
+require 'jetson/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "spitfire"
-  spec.version       = Spitfire::VERSION
+  spec.name          = "jetson"
+  spec.version       = Jetson::VERSION
   spec.authors       = ["blahed"]
   spec.email         = ["trvsdnn@gmail.com"]
 

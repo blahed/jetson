@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in spitfire.gemspec
+# Specify your gem's dependencies in jetson.gemspec
 gemspec
