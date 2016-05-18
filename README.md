@@ -60,6 +60,32 @@ localhost:3000> post '/bar', {something: 'jsony'}, {some_header: 'some value'}
 
 ## DSL
 
+The Jetson DSL is handy for writing scripts, once you include the DSL you'll get access to all of the methods that console has. The one difference is that you'll need to call your http methods inside a `session` block to set the host name. The session block also persists headers and cookies on a global level.
+
+```ruby
+require 'jetson/dsl'
+
+extend Jetson::DSL
+
+session 'http://localhost:4567' do
+  set :verbose, true
+  set :headers, {foo: 'bar'}
+  set :cookies, {wee: 'hah'}
+  
+  get '/foo'
+  
+  res = get! ('/')
+  
+  puts res.status
+end
+
+```
+
+
+### Setting headers and cookies
+
+While working within a `session` block you can use the `set` command to set headers or cookies. Both will be applied to ever request.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
