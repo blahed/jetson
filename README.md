@@ -36,11 +36,11 @@ localhost:3000> get '/foo', {some: 'param'}
 localhost:3000> post '/bar', {something: 'jsony'}
 ```
 
-### Cookies
+#### Cookies
 
 Each console starts with a session (sorta like a browser), so any requests that set cookies will store those cookies and send them with subsequent requests. If you need to clear the cookies/session you can use the `clear :cookies` method.
 
-### Headers
+#### Headers
 
 Every request will have the `Content-Type` and `Accept` header set to `application/json`. If you need to add additional headers you can set them by manipulating the `headers` attribute:
 
@@ -82,7 +82,7 @@ end
 ```
 
 
-### Setting headers and cookies
+#### Setting headers and cookies
 
 While working within a `session` block you can use the `set` command to set headers or cookies. Both will be applied to ever request.
 
